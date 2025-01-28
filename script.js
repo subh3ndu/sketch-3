@@ -1,9 +1,10 @@
 let ballA, ballB
 
 function setup() {
-  createCanvas(400, 400)
-  ballA = new Ball(100, 200, 2)
-  ballB = new Ball(300, 200, 4)
+  createCanvas(innerWidth, innerHeight)
+  ballA = new Ball(width/2 - 200, height/2, 2)
+  ballB = new Ball(width/2 + 200, height/2, 4)
+
 }
 
 function draw() {
@@ -14,6 +15,7 @@ function draw() {
     ballA.applyForce(wind)
     ballB.applyForce(wind)
   }
+
 
   let gravity = createVector(0, 0.2) ///  NOTE: acceleration due to gravity
 
@@ -28,4 +30,11 @@ function draw() {
   ballB.update()
   ballB.edges()
   ballB.show()
+
+  // text config
+  textFont('Arial')
+  textAlign(CENTER, CENTER)
+  textSize(32)
+  strokeWeight(1)
+  text('Click to blow wind →', mouseX, mouseY)
 }

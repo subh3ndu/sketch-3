@@ -44,5 +44,12 @@ class Ball {
     fill(255, 100)
     point(this.pos.x, this.pos.y)
     ellipse(this.pos.x, this.pos.y, this.r * 2)
+
+    textFont('Brush Script MT')
+    textSize(18)
+    strokeWeight(1)
+    stroke(0)
+    fill(255)
+    text(`mass = ${this.mass} units`, this.pos.x, this.pos.y - 2 * this.r)
   }
 }
